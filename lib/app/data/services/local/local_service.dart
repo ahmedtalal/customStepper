@@ -1,0 +1,77 @@
+class LocalService {
+  static LocalService? _localService;
+  LocalService._internal();
+  static LocalService instance() {
+    if (_localService == null) {
+      return _localService = LocalService._internal();
+    }
+    return _localService!;
+  }
+
+  Map<String, dynamic> dataSet = {
+    "data": [
+      {
+        "type": "steps",
+        "children": [
+          {"label": "تاكيد البيانات", "description": "تاكيد بيانات المركبة"},
+          {"label": "الطرف الاول ", "description": "دخل بياناتك"},
+          {"label": "الطرف الثاني ", "description": " بيانات الطرف الثاني"},
+          {"label": " بيانات العقد ", "description": " السعر و عدد السلندرات"},
+          {
+            "label": " استلام العقد ",
+            "description": " مكان و ميعاد استلام العقد"
+          },
+          {"label": " ادفع ", "description": " خيارات الدفع"}
+        ]
+      },
+      {
+        "type": "formData",
+        "children": [
+          {
+            "id": 1,
+            "header": {
+              "name": "خطوة 6/1 ",
+              "label": "تاكيد بيانات المركبة",
+              "description": " اكد بيانات المركبة الخاصة بك"
+            },
+            "body": {
+              "content": [
+                {
+                  "type": "textformfield",
+                  "textType": "numbers",
+                  "label": "رقم البطاقه",
+                  "hint": "",
+                  "style": {
+                    "backgroundColor": "Colors.grey",
+                    "borderRaduis": 10
+                  },
+                  "textStyle": {
+                    "color": "Colors.black",
+                    "fontSize": 10,
+                    "fontFamily": ""
+                  }
+                }
+              ],
+              "additionals": {
+                "parent": "container",
+                "child": "row",
+                "childData": {"type1": "icon", "type2": "text"}
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "footer",
+        "children": [
+          {"id": 1, "name": "التالي"},
+          {"id": 2, "name": "رجوع"}
+        ]
+      }
+    ]
+  };
+
+  List<dynamic> fetchDynamicWidgetData() {
+    return dataSet["data"];
+  }
+}

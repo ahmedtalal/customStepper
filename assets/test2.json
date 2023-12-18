@@ -1,0 +1,507 @@
+{
+  "id": "addRequest",
+  "title": " توثيق عقد بيع سيارة",
+  "secondTitle": "تمكنك هذه الخدمة من توثيق عقد بيع سياراتك النار من مكاتب تالتوثيقية في اي مكتب",
+
+  "steps": [
+    {
+      "label": "تاكيد البيانات",
+      "description": "تاكيد بيانات المركبة"
+    },
+    {
+      "label": "الطرف الاول ",
+      "description": "دخل بياناتك"
+    },
+    {
+      "label": "الطرف الثاني ",
+      "description": " بيانات الطرف الثاني"
+    },
+    {
+      "label": " بيانات العقد ",
+      "description": " السعر و عدد السلندرات"
+    },
+    {
+      "label": " استلام العقد ",
+      "description": " مكان و ميعاد استلام العقد"
+    },
+    {
+      "label": " ادفع ",
+      "description": " خيارات الدفع"
+    }
+  ],
+  "actions": ["SNOT_05_02", "SNOT_05_03", "SNOT_05_04", "SNOT_05_05", "SNOT_05_06", "SNOT_05_07"],
+  "layout": "container",
+  "formData": [
+    [
+      [
+        {
+          "stepTitle": "خطوة 6/1 ",
+          "label": "تاكيد بيانات المركبة",
+          "description": " اكد بيانات المركبة الخاصة بك",
+          "type": "description"
+        },
+        {
+          "type": "container",
+          "id": "container",
+          "name": "container",
+          "layout": "accordion-select",
+          "data": "allowedVehicles",
+          "children": {
+            "header": {
+              "formData": [
+                {
+                  "type": "text",
+                  "name": "License.ExpiryDate",
+                  "label": " انتهاء",
+                  "readOnly": true,
+                  "text": true
+                },
+                {
+                  "type": "text",
+                  "name": "Vehicle.Make.Name",
+                  "readOnly": true,
+                  "text": true
+                },
+                {
+                  "type": "text",
+                  "name": "Vehicle.Model.Name",
+                  "readOnly": true,
+                  "text": true
+                },
+                {
+                  "type": "plateNumber",
+                  "name": "License.PlateNumber",
+                  "label": " رقم اللوحة",
+                  "readOnly": true,
+                  "text": true
+                }
+              ]
+            },
+            "details": {
+              "formData": [
+                {
+                  "type": "text",
+                  "name": "License.ExpiryDate",
+                  "label": "تاريخ الانتهاء",
+                  "readOnly": true,
+                  "text": true,
+                  "lg": 4,
+                  "md": 4,
+                  "id": 1
+                },
+                {
+                  "type": "text",
+                  "name": "License.PlateNumber",
+                  "label": "رقم اللوحة",
+                  "readOnly": true,
+                  "text": true,
+                  "lg": 4,
+                  "md": 4,
+                  "id": 4
+                },
+                {
+                  "type": "text",
+                  "name": "Vehicle.ChassisNumber",
+                  "label": "رقم الشاسية",
+                  "readOnly": true,
+                  "text": true,
+                  "lg": 4,
+                  "md": 4,
+                  "id": 6
+                },
+                {
+                  "type": "text",
+                  "name": "License.IssuePlace.Name",
+                  "label": "وحدة الترخيص",
+                  "readOnly": true,
+                  "text": true,
+                  "lg": 4,
+                  "md": 4,
+                  "id": 2
+                },
+                {
+                  "type": "text",
+                  "name": "License.GovernorateId.Name",
+                  "label": "المحافظة",
+                  "readOnly": true,
+                  "text": true,
+                  "lg": 4,
+                  "md": 4,
+                  "id": 5
+                },
+
+                {
+                  "type": "text",
+                  "name": "License.PlateType.Name",
+                  "label": "نوع الترخيص",
+                  "readOnly": true,
+                  "text": true,
+                  "lg": 4,
+                  "md": 4,
+                  "id": 7
+                },
+
+                {
+                  "type": "text",
+                  "name": "Vehicle.EnginNumber['#text']",
+                  "label": "رقم الموتور",
+                  "readOnly": true,
+                  "text": true,
+                  "lg": 4,
+                  "md": 4,
+                  "id": 3
+                }
+              ]
+            }
+          }
+        },
+
+        {
+          "label": "toolTip",
+          "type": "toolTip",
+          "id": "toolTip",
+          "name": "toolTip",
+          "value": "إذا بلغت قيمة عقد بيع المركبة عشرين ألف جنيه فأكثر، يجب التوقيع على العقد بمعرفة احد المحامين المقبولين امام المحاكم الإبتدائية على الاقل مع التصديق على هذا التوقيع أمام نقابة المحامين العامة او الفرعية التابعة لها"
+        },
+
+        {
+          "id": "submition",
+          "type": "button",
+          "name": "الخطوة التالية",
+          "lg": 12,
+          "color": "success",
+          "action": "submit",
+          "arrow": true
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "stepTitle": "خطوة 6/2 ",
+          "label": "  دخل بياناتك",
+          "description": "البيانات لازم تطابق بيانات البطاقة الشخصية",
+          "type": "description"
+        },
+
+        {
+          "label": "الرقم القومي",
+          "type": "text",
+          "id": "sellerCustCivilId",
+          "name": "sellerCustCivilId",
+          "maxLength": 10,
+          "lg": 6,
+          "md": 6,
+          "tip": "",
+          "readOnly": true
+        },
+        {
+          "label": "الاسم",
+          "type": "text",
+          "id": "sellerCustName",
+          "name": "sellerCustName",
+          "maxLength": 10,
+          "lg": 6,
+          "md": 6,
+          "tip": "",
+          "readOnly": true
+        },
+        {
+          "label": "العنوان",
+          "type": "text",
+          "id": "sellerAddress",
+          "name": "sellerAddress",
+          "maxLength": 50,
+          "minLength": 3,
+          "lg": 6,
+          "md": 6,
+          "tip": "",
+          "placeholder": "ادخل عنوانك",
+          "required": true
+        },
+        {
+          "label": "المحافظة",
+          "type": "select",
+          "id": "sellerGovernmentalid",
+          "name": "sellerGovernmentalid",
+          "lg": 6,
+          "md": 6,
+          "tip": "",
+          "dependencies": [],
+          "required": true,
+          "dataFromKey": "sellerGovernmentalid"
+        },
+        {
+          "dependency": "sellerGovernmentalid",
+          "label": "الحي",
+          "type": "select",
+          "id": "sellerPostOfficeId",
+          "name": "sellerPostOfficeId",
+          "required": true,
+          "lg": 6,
+          "md": 6,
+          "dependencies": [],
+          "dataFromKey": "sellerPostOfficeId"
+        },
+
+        {
+          "id": "submition2",
+          "type": "button",
+          "name": "الخطوة التالية",
+          "lg": 12,
+          "color": "success",
+          "action": "submit"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "stepTitle": "خطوة 6/3 ",
+          "label": "  أدخل بيانات الطرف الثاني",
+          "description": "يلزم مطابقة بيانات البطاقة الشخصية",
+          "type": "description"
+        },
+        {
+          "label": "نوع الشخصية ",
+          "type": "select",
+          "id": "buyerCustTypeNo",
+          "name": "buyerCustTypeNo",
+          "arr": [
+            { "code": "1", "desc": "شخصية حقيقية", "orgType": "" },
+            { "code": "2", "desc": "شخصية اعتبارية", "orgType": "" }
+          ],
+          "maxLength": 10,
+          "lg": 6,
+          "md": 6,
+          "tip": "",
+          "required": true
+        },
+        {
+          "label": "اسم الشخصية الإعتبارية",
+          "type": "text",
+          "id": "buyerCustName",
+          "name": "buyerCustName",
+          "maxLength": 20,
+          "lg": 6,
+          "md": 6,
+          "tip": "",
+          "required": true,
+          "condition": "watch('buyerCustTypeNo')==='2'"
+        },
+        {
+          "label": "الرقم القومى",
+          "type": "text",
+          "id": "buyerCustCivilId",
+          "name": "buyerCustCivilId",
+          "maxLength": 14,
+          "lg": 6,
+          "md": 6,
+          "tip": "",
+          "required": true,
+          "condition": "watch('buyerCustTypeNo')!=='2'"
+        },
+        {
+          "label": "الجنسية",
+          "type": "select",
+          "id": "buyerCustNationality",
+          "name": "buyerCustNationality",
+          "required": true,
+          "dataFromKey": "buyerCustNationality",
+          "dependencies": [],
+
+          "lg": 6,
+          "md": 6
+        },
+        {
+          "label": "العنوان",
+          "type": "text",
+          "id": "buyerCustAddress",
+          "name": "buyerCustAddress",
+          "maxLength": 50,
+          "lg": 6,
+          "md": 6,
+          "tip": "",
+          "placeholder": "ادخل العنوان بالتفصيل",
+          "required": true
+        },
+        {
+          "label": "المحافظة",
+          "type": "select",
+          "id": "buyerGovernmentalid",
+          "name": "buyerGovernmentalid",
+          "required": true,
+          "dataFromKey": "buyerGovernmentalid",
+          "dependencies": [],
+          "lg": 6,
+          "md": 6
+        },
+
+        {
+          "depenedacy": "buyerGovernmentalid",
+          "label": "الحي",
+          "type": "select",
+          "dependency": "sellerGovernmentalid",
+          "id": "buyerPostOfficeId",
+          "name": "buyerPostOfficeId",
+          "required": true,
+          "dataFromKey": "buyerPostOfficeId",
+          "dependencies": [],
+          "lg": 6,
+          "md": 6
+        },
+
+        {
+          "id": "submition43",
+          "type": "button",
+          "name": "الخطوة التالية",
+          "lg": 12,
+          "color": "success",
+          "action": "submit"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "stepTitle": "خطوة 6/4 ",
+          "label": " بيانات العقد ",
+          "description": " السعر و عدد السلندرات",
+          "type": "description"
+        },
+
+        {
+          "label": " السعر",
+          "type": "number",
+          "id": "calculatedValue",
+          "name": "calculatedValue",
+          "required": true,
+          "lg": 6,
+          "md": 6
+        },
+        {
+          "label": " عدد السلندرات",
+          "type": "number",
+          "id": "cylinderno",
+          "name": "cylinderno",
+          "required": true,
+          "lg": 6,
+          "md": 6
+        },
+        {
+          "id": "submition44",
+          "type": "button",
+          "name": "الخطوة التالية",
+          "lg": 12,
+          "color": "success",
+          "action": "submit"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "stepTitle": "خطوة 6/5 ",
+          "label": "  مكان و ميعاد استلام العقد ",
+          "description": "حدد ميعاد و مكان استلام التوكيل الخاص بك",
+          "type": "description"
+        },
+        {
+          "label": "toolTip",
+          "type": "toolTip",
+          "id": "toolTip",
+          "name": "toolTip",
+          "lg": 12,
+          "value": "سيتم تحصيل مقابل خدمة مميزةيتم تحصيلها داخل الفرع"
+        },
+        {
+          "label": "المحافظة",
+          "type": "select",
+          "id": "govThird",
+          "name": "govThird",
+          "dataFromKey": "govThird",
+          "dependencies": [],
+          "required": true,
+          "lg": 6,
+          "md": 6
+        },
+
+        {
+          "dependency": "govThird",
+
+          "label": "المكتب",
+          "type": "select",
+          "id": "organizationUnitId",
+          "name": "organizationUnitId",
+          "required": true,
+          "lg": 6,
+          "md": 6,
+          "dataFromKey": "organizationUnitId"
+        },
+        {
+          "dependency": "organizationUnitId",
+          "label": ["التاريخ", "الميعاد"],
+          "nameArray": ["reserveDate", "reserveTime"],
+          "accessKeys": ["datereserved", "reservationTime", "reserveTime"],
+          "type": "select",
+          "id": "officeAgendaData",
+          "name": "officeAgendaData",
+          "required": true,
+          "cascaded": true,
+          "lg": 12,
+          "md": 12,
+          "dataFromKey": "officeAgendaData"
+        },
+
+        {
+          "id": "submition4",
+          "type": "button",
+          "name": "الخطوة التالية",
+          "lg": 12,
+          "color": "success",
+          "action": "submit"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "stepTitle": "خطوة 6/6 ",
+          "label": "مراجعة رسوم الخدمة",
+          "description": "         راجع تفاصيل تكلفة الخدمة",
+          "type": "description"
+        },
+
+        {
+          "label": "cardPayment",
+          "type": "cardPayment",
+          "id": "postProcRes",
+          "name": "postProcRes"
+        },
+
+        {
+          "id": "submition323",
+          "type": "button",
+          "name": " تاكيد الدفع",
+          "last": true,
+          "lg": 12,
+          "color": "success",
+          "action": "submit",
+          "arrow": true
+        }
+      ]
+    ]
+  ],
+  "footer": [
+    {
+      "id": "1",
+      "type": "button",
+      "name": "التالي"
+    },
+    {
+      "id": "2",
+      "type": "button",
+      "name": "رجوع"
+    }
+  ]
+}
